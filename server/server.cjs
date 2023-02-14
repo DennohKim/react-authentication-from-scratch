@@ -1,3 +1,12 @@
-const math = require('../server/math.cjs');
+const express = require('express');
+const path = require("path");
+const PORT = process.env.PORT || 3500;
 
-console.log(math.add(2,3))
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('Hello, world')
+})
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
